@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  
+}
+.voter{
+  display:flex;
+  justify-content: space-around;
+
+  color:black; 
+}
+.nav{
+  display:flex;
+  justify-content: space-around;
+  background: rgb(51, 68, 68);
+  color: white;
+}
+.list{
+  list-style: none;
+}
+body {background-color:lightcyan;}
