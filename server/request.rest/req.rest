@@ -1,0 +1,6 @@
+POST http://localhost:5000/consti
+Content-Type: application/json
+
+{
+"consti_name":"New Delhi"
+}
