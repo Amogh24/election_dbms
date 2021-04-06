@@ -34,11 +34,10 @@ CREATE TABLE ELECTION_OFFICER
 
 CREATE TABLE CANDIDATES
 (
-    candidate_id int,
+    candidate_id SERIAL PRIMARY KEY,
     v_id int NOT NULL,
     consti_id int NOT NULL,
     age int,
-    PRIMARY KEY (candidate_id),
     FOREIGN KEY(consti_id) REFERENCES CONSTITUENCY(consti_id),
     FOREIGN KEY(v_id) REFERENCES VOTER(v_id),
     CHECK (age>=25)

@@ -1,6 +1,8 @@
-POST http://localhost:5000/consti
+POST http://localhost:5000/officer
 Content-Type: application/json
 
 {
-"consti_name":"North West Delhi"
+    "officer_id":1,
+    "name":"Rakesh",
+    "consti_id":1
 }

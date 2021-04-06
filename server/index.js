@@ -105,6 +105,35 @@ app.delete("/voter/:id",async(req,res)=>
         
     }
 })
+
+//add data to electtion_officer
+app.post('/officer',async (req,res)=>
+{
+    try {
+        console.log(req.body)
+        const {officer_id,name,consti_id} = req.body
+        const new_officer = await pool.query(
+            "INSERT INTO ELECTION_OFFICER VALUES($1,$2,$3) RETURNING *",[officer_id,name,consti_id] 
+        )
+        res.json(new_officer);
+    } catch (error) {
+        console.log(error.message)
+    }
+});
+
+//fetching all officers
+app.get("/officer",async (req,res)=>
+{
+    try {
+        const allofficers = await pool.query(
+            "SELECT * FROM ELECTION_OFFICER"
+        )
+        res.json(allofficers.rows)
+    } catch (error) {
+        console.log(error.message)
+    }
+})
+
 app.listen(5000,()=>
 {
     console.log("server has started on port 5000")
