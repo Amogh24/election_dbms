@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Voter from './voter.js';
 import Nav from './nav.js';
