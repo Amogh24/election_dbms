@@ -18,8 +18,10 @@
 .list{
   list-style: none;
   text-align: center;
-  display:flow-root;
-  padding-bottom: 2px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: inherit;
+  
 }
 .B{
   background-color: #4CAF50;
