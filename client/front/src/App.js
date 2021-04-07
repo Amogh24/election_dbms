@@ -9,7 +9,7 @@ function App() {
       <h1>Electoral Database</h1>
       <Switch>
       <Route path="/" exact component={Nav}/>
-      <Route path="/voter" component={Voter}/>
+      <Route path="/voter" exact component={Voter}/>
       </Switch>
     </div>
     </Router>
