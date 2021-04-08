@@ -1,5 +1,5 @@
 import React from 'react'
-import inputvoter from './new_voter'
+import Inputvoter from './new_voter'
 import {BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
 
 const linkStyle={
@@ -12,9 +12,7 @@ function Voter()
     return(
         <Router>
         <div className="voter">
-            <Switch>
-            <Route path='/newvoter'component={inputvoter}/>
-            </Switch>
+         
             <Link style={linkStyle} to ='/newvoter'>
             <h2>New voter registration</h2>
             </Link>
