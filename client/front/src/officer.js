@@ -1,0 +1,47 @@
+import React, { useEffect,useState } from 'react';
+
+const Officer = () =>
+{
+
+    const getOfficers = async()=>
+    {
+        const response = await fetch('http://localhost:5000/officer')
+        const data = await response.json()
+        console.log(data)
+    }
+useEffect(()=>{
+    getOfficers();
+},[])
+return(
+    <div>
+         <table className="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+)
+}
+
+export default Officer;

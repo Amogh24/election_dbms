@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {Link, link} from 'react-router-dom';
 
@@ -13,6 +14,7 @@ const linkStyle={
         
       <div className="nav">
       <ul className="list">
+         
           <Link style={linkStyle} to ='/voter'>
           <button className='B'>Voter</button>
           </Link>
@@ -22,9 +24,10 @@ const linkStyle={
           <Link style={linkStyle} to ='/study'>
           <button className='B'>Demographic Study</button>
           </Link>
-          <Link style={linkStyle} to ='/officers'>
+          <Link style={linkStyle} to ='/officer'>
           <button className='B'>Election Officers</button>
           </Link>
+          
       </ul>
       </div>
      
