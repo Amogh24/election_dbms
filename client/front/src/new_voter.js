@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 
 const Inputvoter = () =>
 {
-    const [person,setPerson] = useState([]);
+    //const [person,setPerson] = useState([]);
     const [name,setName] = useState('');
     const [age,setAge] = useState(0);
     const [gender,setGender] = useState('')
@@ -12,9 +12,27 @@ const Inputvoter = () =>
     const [date,setDate] = useState('')
     const [consti,setConsti] = useState(0)
 
-const addPerson = () =>
+const addPerson = async (event) =>
 {
-
+ event.preventDefault();
+ const person = 
+ {
+    name:name,
+    age:age,
+    gender:gender,
+    address:address,
+    phone:phone,
+    dob:date,
+    email:mail,
+    consti_id:consti
+ }
+ 
+ console.log(person)
+ const response = await fetch("http://localhost:5000/voter/new",{
+    method:"POST" ,
+    headers:{"Content-Type": "application/json"},
+    body : JSON.stringify(person)
+ });
 }
 
 //name
@@ -88,10 +106,14 @@ const handleConsti = (event) =>
                  onChange = {handleConsti}/>
 
              </div>
+             <div>
+                 <button className="btn btn-success,color:green">Add</button>
+             </div>
              </form>
              
      </div>
  )
+
 }
 
 export default Inputvoter;

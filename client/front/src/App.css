@@ -24,8 +24,9 @@
   flex-direction: column;
   flex-wrap: inherit; 
 }
+
 .B{
-  background-color: #4CAF50;
+  background-color: rgb(238, 161, 17);
   font-size: 30px;
   
   width:300px;
