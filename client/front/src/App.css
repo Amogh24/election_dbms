@@ -25,53 +25,130 @@
   flex-wrap: inherit; 
 }
 
-.B{
+ .B{
   background-color:rgb(40, 40, 92) ;
   font-size: 30px;
-  
-  width:300px;
+  margin-bottom: 10px;
+  width:350px;
   height: 120px;
   font-style: normal;
   color: white;
+ 
+  display: inline-block;
   border-radius: 10%;
   justify-content: space-around;
-  transition-duration: 0.5 ;
+  transition: all 0.5s ;
+  cursor:pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+} 
+
+.B span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
-.B:hover{
+.B span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+ .B:hover{
   background-color: rgb(70, 201, 70) ;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+} 
+.B:hover span {
+  padding-right: 25px;
+}
+.B:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 table{
   background-color:white;
   color:black;
-  border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   font-family: sans-serif;
-  border: 1px solid black;
+  
+  border: solid black 1px;
+  
+  border-collapse:collapse;
   width:80%;
-  border-radius: 5px;
 }
 
 td{
   border: 1px solid black;
-  border-radius: 5px;
+  
 }
 
 th { 
-  border: 1px solid black;
   
   height: 70px;
   background-color: #009879;
     color: #ffffff;
     font-size: larger;
+    border-top:none
 }
+
+
+ 
+  
+
+
 tr:hover {background-color: rgba(169, 231, 205, 0.568);}
 
 tr:nth-child(even) {background-color:#f3f3f3}
 tr{
   height: 40px;
 }
-body {background-color:lightcyan;}
+.heading{
+  color:black;
+  font-size: 50px;
+  font-family: -apple-system ;
+  
+}
+.sub
+{
+  margin-top: 20px;
+  height:50px;
+  width: 70px;
+  color:white;
+  background-color: rgb(62, 204, 62);
+  font-size: larger;
+}
+.instructions
+{
+  align-content: left;
+  align-items: left;
+  display:flex-start;
+  font-size:larger;
+}
+.ol
+{
+  text-align: justify;
+}
+form{
+  display:block;
+ 
+}
+formtext {
+  position: relative;
+  top: -48px;
+  background: white;
+  padding: 7px;
+  width: 57px;
+  color: red;
+}
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  border-radius: 10px;
+}
+
+body {background-color:lightcyan}

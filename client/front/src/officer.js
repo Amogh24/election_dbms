@@ -60,10 +60,13 @@ useEffect(()=>{
     getConsti();
 },[])
 
+
+
 officers.forEach(func)
 console.log(officers)
 return(
-    <div >
+    
+    <div>
          <table className="t">
     <thead>
       <tr className="tr"> 
@@ -88,6 +91,7 @@ return(
     </tbody>
   </table>
     </div>
+    
 )
 }
 

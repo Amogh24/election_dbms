@@ -16,16 +16,16 @@ const linkStyle={
       <ul className="list">
          
           <Link style={linkStyle} to ='/voter'>
-          <button className='B'>Voter</button>
+          <button className='B'><span>Voter</span></button>
           </Link>
           <Link style={linkStyle} to ='/candidate'>
-          <button className='B'>Candidate</button>
+          <button className='B'><span>Candidate</span></button>
           </Link>
           <Link style={linkStyle} to ='/study'>
-          <button className='B'>Demographic Study</button>
+          <button className='B'><span>Demographic Study</span></button>
           </Link>
           <Link style={linkStyle} to ='/officer'>
-          <button className='B'>Election Officers</button>
+          <button className='B'><span>Election Officers</span></button>
           </Link>
           
       </ul>

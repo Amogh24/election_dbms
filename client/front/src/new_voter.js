@@ -26,7 +26,10 @@ const addPerson = async (event) =>
     email:mail,
     consti_id:consti
  }
- 
+ if(age<18)
+ {
+     window.alert("Age must be greater than 18")
+ }
  console.log(person)
  const response = await fetch("http://localhost:5000/voter/new",{
     method:"POST" ,
@@ -45,6 +48,7 @@ const handleName = (event) =>
 const handleAge = (event) =>
 {
  console.log(event.target.value)
+ 
  setAge(event.target.value)
 }
 //gender
@@ -85,31 +89,39 @@ const handleConsti = (event) =>
 }
  return(
      <div>
-         <h1 className='text-center mt-5'>New Voter registration</h1>
+         <h1 className='text-center '>New Voter registration</h1>
          <form onSubmit ={addPerson}>
              <div>
-                 name: <input value = {name}
+                 NAME: <input type="text" value = {name}
                  onChange = {handleName}/>
-                 age: <input value = {age}
+                 AGE: <input type="number" value = {age}
                  onChange = {handleAge}/>
-                 gender: <input value = {gender}
+                 GENDER: <input type="text"value = {gender}
                  onChange = {handleGender}/>
-                 mail: <input value = {mail}
+                 EMAIL: <input value = {mail}
                  onChange = {handleMail}/>
-                 address: <input value = {address}
+                 ADDRESS: <input value = {address}
                  onChange = {handleAddress}/>
-                 phone: <input value = {phone}
+                 PHONE: <input type="number"value = {phone}
                  onChange = {handlePhone}/>
-                 date: <input value = {date}
+                 DATE: <input value = {date}
                  onChange = {handleDate}/>
-                 constituency: <input value = {consti}
+                 CONSTITUENCY: <input value = {consti}
                  onChange = {handleConsti}/>
 
              </div>
              <div>
-                 <button className="btn btn-success,color:green">Add</button>
+                 <button className="sub">ADD</button>
              </div>
              </form>
+             <h2 className="heading">INSTRUCTIONS</h2>
+             <ol className="ol">
+                 <li className="instructions"><p>All the entries are mandatory</p></li>
+                 <li className="instructions"><p>Mail must be of the format "xyz@abc"</p></li>
+                 <li className="instructions"><p>Date must be of the format "DD-MM-YYYY"</p></li>
+                 <li className="instructions"><p>Click below for list of constituencies:</p></li>
+                 <button>List of Constituencies</button>
+             </ol>
              
      </div>
  )
