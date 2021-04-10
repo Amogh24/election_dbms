@@ -63,10 +63,10 @@ useEffect(()=>{
 officers.forEach(func)
 console.log(officers)
 return(
-    <div>
-         <table className="table">
+    <div >
+         <table className="t">
     <thead>
-      <tr>
+      <tr className="tr"> 
         <th>Officer ID</th>
         <th>Officer Name</th>
         <th>Constituency</th>
