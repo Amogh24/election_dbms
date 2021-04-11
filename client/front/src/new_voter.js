@@ -26,7 +26,9 @@ const addPerson = async (event) =>
     email:mail,
     consti_id:consti
  }
- if(age<18)
+ if(window.confirm("Do you want to submit?"))
+ {
+     if(age<18)
  {
      window.alert("Age must be greater than 18")
  }
@@ -41,6 +43,7 @@ const addPerson = async (event) =>
  const voter_id = await res.json()
  console.log(voter_id.max)
  window.alert(`Congratulations you have been registered as a voter. Your voter ID is ${voter_id.max}`)
+}
 }
 
 //name
@@ -95,26 +98,26 @@ const handleConsti = (event) =>
 
  return(
      <div>
-         <h1 className='text-center '>New Voter registration</h1>
+         <h1 className='h'>New Voter registration</h1>
          <div class="container">
          <form onSubmit ={addPerson}>
              <div>
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center",marginBlockStart:"1"}}>NAME: <input placeholder="Name"type="text" value = {name}
-                 onChange = {handleName}/></div><br />
-                <div style= {{display:"flex",flexDirection:"row",alignItems:"center",marginBlockStart:"1"}}>AGE: <input placeholder="18" type="number" value = {age}
-                 onChange = {handleAge}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>GENDER: <input type="text" placeholder="enter Male or Female or other"value = {gender}
-                 onChange = {handleGender}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>EMAIL: <input value = {mail}
-                 onChange = {handleMail}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>ADDRESS: <input value = {address}
-                 onChange = {handleAddress}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>PHONE: <input type="number"value = {phone}
-                 onChange = {handlePhone}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>DATE: <input value = {date}
-                 onChange = {handleDate}/></div> <br />
-                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>CONSTITUENCY: <input value = {consti}
-                 onChange = {handleConsti}/></div> <br />
+                 <label>NAME: </label><input placeholder="Name"type="text" value = {name}
+                 onChange = {handleName}/><br />
+                <label>AGE:</label> <input placeholder="18" type="number" value = {age}
+                 onChange = {handleAge}/> <br />
+                <label>GENDER: </label><input type="text" placeholder="enter Male or Female or other"value = {gender}
+                 onChange = {handleGender}/> <br />
+                 <label>EMAIL: </label><input value = {mail}
+                 onChange = {handleMail}/> <br />
+                 <label>ADDRESS: </label><input value = {address}
+                 onChange = {handleAddress}/><br />
+                 <label>PHONE: </label><input type="number"value = {phone}
+                 onChange = {handlePhone}/><br />
+                 <label>DATE: </label><input placeholder="DD-MM-YYYY"value = {date}
+                 onChange = {handleDate}/> <br />
+                <label>CONSTITUENCY ID:</label> <input placeholder="check the list below to see your constituency ID"value = {consti}
+                 onChange = {handleConsti}/> <br />
 
              </div>
              <div>

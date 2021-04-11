@@ -12,7 +12,7 @@
   display:flex;
   justify-content: space-around;
   border-radius: 5%;
-  
+  text-align: center;
   color: white;
 }
 .list{
@@ -89,7 +89,7 @@ td{
 th { 
   
   height: 70px;
-  background-color: #009879;
+  background-color: rgb(80, 75, 75);
     color: #ffffff;
     font-size: larger;
     border-top:none
@@ -107,16 +107,20 @@ tr{
   height: 40px;
 }
 .heading{
-  color:black;
+  color:white;
   font-size: 50px;
   font-family: -apple-system ;
   
+}
+.h{
+  color: white;
 }
 .sub
 {
   margin-top: 20px;
   height:50px;
   width: 70px;
+  border-radius: 4px;
   color:white;
   background-color: rgb(62, 204, 62);
   font-size: larger;
@@ -129,20 +133,19 @@ tr{
   font-size:larger;
 }
 
-form{
-  display:inline-block;
-  width:400px
-  
- 
-}
 label{
   display: inline-block;
+  width: 140px;
+  text-align: right;
+  color: white;
 }
+
 input{
-  width: 80%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 10px;
   border-radius: 5px;
 }
 
-body {background-color:lightcyan}
+
+body {background-color: rgb(218, 75, 75);}

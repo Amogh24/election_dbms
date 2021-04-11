@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <h1 className="heading">Electoral Database</h1>
+    <h1 className="heading">Electoral Database</h1>
       <Switch>
       <Route path = "/" exact component={Nav}/>
       <Route path = "/voter" exact component={Voter}/>

@@ -13,6 +13,7 @@ const linkStyle={
         
         
       <div className="nav">
+         
       <ul className="list">
          
           <Link style={linkStyle} to ='/voter'>
