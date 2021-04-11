@@ -4,13 +4,13 @@ const Inputvoter = () =>
 {
     //const [person,setPerson] = useState([]);
     const [name,setName] = useState('');
-    const [age,setAge] = useState(0);
+    const [age,setAge] = useState();
     const [gender,setGender] = useState('')
     const [mail,setMail] = useState('')
     const [address,setAddress] = useState('')
-    const [phone,setPhone] = useState(0)
+    const [phone,setPhone] = useState()
     const [date,setDate] = useState('')
-    const [consti,setConsti] = useState(0)
+    const [consti,setConsti] = useState()
 
 const addPerson = async (event) =>
 {
@@ -36,6 +36,11 @@ const addPerson = async (event) =>
     headers:{"Content-Type": "application/json"},
     body : JSON.stringify(person)
  });
+
+ const res = await fetch("http://localhost:5000/voter/id")
+ const voter_id = await res.json()
+ console.log(voter_id.max)
+ window.alert(`Congratulations you have been registered as a voter. Your voter ID is ${voter_id.max}`)
 }
 
 //name
@@ -87,41 +92,38 @@ const handleConsti = (event) =>
  console.log(event.target.value)
  setConsti(event.target.value)
 }
+
  return(
      <div>
          <h1 className='text-center '>New Voter registration</h1>
+         <div class="container">
          <form onSubmit ={addPerson}>
              <div>
-                 NAME: <input type="text" value = {name}
-                 onChange = {handleName}/>
-                 AGE: <input type="number" value = {age}
-                 onChange = {handleAge}/>
-                 GENDER: <input type="text"value = {gender}
-                 onChange = {handleGender}/>
-                 EMAIL: <input value = {mail}
-                 onChange = {handleMail}/>
-                 ADDRESS: <input value = {address}
-                 onChange = {handleAddress}/>
-                 PHONE: <input type="number"value = {phone}
-                 onChange = {handlePhone}/>
-                 DATE: <input value = {date}
-                 onChange = {handleDate}/>
-                 CONSTITUENCY: <input value = {consti}
-                 onChange = {handleConsti}/>
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center",marginBlockStart:"1"}}>NAME: <input placeholder="Name"type="text" value = {name}
+                 onChange = {handleName}/></div><br />
+                <div style= {{display:"flex",flexDirection:"row",alignItems:"center",marginBlockStart:"1"}}>AGE: <input placeholder="18" type="number" value = {age}
+                 onChange = {handleAge}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>GENDER: <input type="text" placeholder="enter Male or Female or other"value = {gender}
+                 onChange = {handleGender}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>EMAIL: <input value = {mail}
+                 onChange = {handleMail}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>ADDRESS: <input value = {address}
+                 onChange = {handleAddress}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>PHONE: <input type="number"value = {phone}
+                 onChange = {handlePhone}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>DATE: <input value = {date}
+                 onChange = {handleDate}/></div> <br />
+                 <div style= {{display:"flex",flexDirection:"row",alignItems:"center"}}>CONSTITUENCY: <input value = {consti}
+                 onChange = {handleConsti}/></div> <br />
 
              </div>
              <div>
                  <button className="sub">ADD</button>
              </div>
              </form>
-             <h2 className="heading">INSTRUCTIONS</h2>
-             <ol className="ol">
-                 <li className="instructions"><p>All the entries are mandatory</p></li>
-                 <li className="instructions"><p>Mail must be of the format "xyz@abc"</p></li>
-                 <li className="instructions"><p>Date must be of the format "DD-MM-YYYY"</p></li>
-                 <li className="instructions"><p>Click below for list of constituencies:</p></li>
-                 <button>List of Constituencies</button>
-             </ol>
+             </div>
+            <button>List of Constituencies</button>
+             
              
      </div>
  )

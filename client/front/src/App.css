@@ -128,27 +128,21 @@ tr{
   display:flex-start;
   font-size:larger;
 }
-.ol
-{
-  text-align: justify;
-}
+
 form{
-  display:block;
+  display:inline-block;
+  width:400px
+  
  
 }
-formtext {
-  position: relative;
-  top: -48px;
-  background: white;
-  padding: 7px;
-  width: 57px;
-  color: red;
+label{
+  display: inline-block;
 }
 input{
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 body {background-color:lightcyan}
