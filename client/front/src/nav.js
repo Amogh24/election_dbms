@@ -11,9 +11,9 @@ const linkStyle={
 {
     return(
         
-        
+        <div><h1 className="heading">Electoral Database</h1>
       <div className="nav">
-         
+        
       <ul className="list">
          
           <Link style={linkStyle} to ='/voter'>
@@ -31,7 +31,7 @@ const linkStyle={
           
       </ul>
       </div>
-     
+      </div>
     );
 }
 export default Nav;
