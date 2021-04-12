@@ -1,4 +1,6 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,Fragment} from 'react'
+import List from './modal'
+
 
 const Inputvoter = () =>
 {
@@ -11,7 +13,8 @@ const Inputvoter = () =>
     const [phone,setPhone] = useState()
     const [date,setDate] = useState('')
     const [consti,setConsti] = useState()
-
+    const [constis,setconstis] = useState('')
+    const [show,setShow] = useState(false)
 const addPerson = async (event) =>
 {
  event.preventDefault();
@@ -30,7 +33,7 @@ const addPerson = async (event) =>
  {
      if(age<18)
  {
-     window.alert("Age must be greater than 18")
+    window.alert("Age must be greater than 18")
  }
  console.log(person)
  const response = await fetch("http://localhost:5000/voter/new",{
@@ -96,6 +99,59 @@ const handleConsti = (event) =>
  setConsti(event.target.value)
 }
 
+const getConsti = async()=>
+{
+    const res = await fetch('http://localhost:5000/consti')
+    const consti = await res.json()
+    console.log(consti)
+    setconstis(consti)
+}
+
+useEffect(()=>{
+    getConsti();
+},[])
+
+const Constilist = () =>
+{
+    return(
+        <div>
+        <h1 style={{color:"white"}}>List of Constituencies</h1>
+         <table className="t">
+    <thead>
+      <tr className="tr"> 
+        <th>Constituency ID</th>
+        
+        <th>Constituency</th>
+      </tr>
+    </thead>
+    <tbody>
+      {/*<tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>*/}
+     {constis.map(c => (
+         <tr key={c.consti_id}>
+             <td>{c.consti_id}</td>
+             <td>{c.consti_name}</td>
+             
+         </tr>
+     ))}
+    </tbody>
+  </table>
+    </div>
+    )
+}
+
+const HandleClick = ()=>
+{
+    console.log(constis)
+    setShow(true)
+   
+}
+
+
+
  return(
      <div>
          <h1 className='h'>New Voter registration</h1>
@@ -114,21 +170,25 @@ const handleConsti = (event) =>
                  onChange = {handleAddress}/><br />
                  <label>PHONE: </label><input type="number"value = {phone}
                  onChange = {handlePhone}/><br />
-                 <label>DATE: </label><input placeholder="DD-MM-YYYY"value = {date}
+                 <label>DATE: </label><input placeholder="MM-DD-YYYY"value = {date}
                  onChange = {handleDate}/> <br />
                 <label>CONSTITUENCY ID:</label> <input placeholder="check the list below to see your constituency ID"value = {consti}
                  onChange = {handleConsti}/> <br />
 
              </div>
+             
              <div>
                  <button className="sub">ADD</button>
              </div>
              </form>
+             <button onClick={HandleClick}>List of constituencies</button>
+             {
+                 show?<Constilist/>:null
+             }
              </div>
-            <button>List of Constituencies</button>
-             
-             
+      
      </div>
+     
  )
 
 }

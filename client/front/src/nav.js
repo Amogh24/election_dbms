@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {Link, link} from 'react-router-dom';
-
+import List from './modal'
 const linkStyle={
     color:"white"
 }
@@ -30,6 +30,7 @@ const linkStyle={
           </Link>
           
       </ul>
+      
       </div>
       </div>
     );
