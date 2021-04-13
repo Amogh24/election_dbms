@@ -37,7 +37,8 @@ CREATE TABLE CANDIDATES
     candidate_id SERIAL PRIMARY KEY,
     v_id int NOT NULL,
     consti_id int NOT NULL,
-    age int,
+    assets int,
+    education varchar(255),
     FOREIGN KEY(consti_id) REFERENCES CONSTITUENCY(consti_id),
     FOREIGN KEY(v_id) REFERENCES VOTER(v_id),
     CHECK (age>=25)

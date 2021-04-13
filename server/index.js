@@ -70,6 +70,19 @@ app.get("/voter",async (req,res)=>
     }
 });
 
+//get latest voter id
+app.get("/voter/id",async (req,res)=>
+{
+    try {
+        const latest_id = await pool.query(
+            "SELECT MAX(v_id) FROM VOTER"
+        )
+        res.json(latest_id.rows[0])
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
 //view a voter
 app.get("/voter/:id",async (req,res)=>
 {
@@ -87,9 +100,9 @@ app.get("/voter/:id",async (req,res)=>
 app.put("/voter/:id",async(req,res)=>
 {
     const {id}=req.params
-    const {name}=req.body
+    const {name,age,gender,address,phone,dob,email,consti_id}=req.body
     const updatevoter= await pool.query(
-        "UPDATE voter SET name = $1 WHERE v_id = $2",[name,id]
+        "UPDATE voter SET name = $1,age = $2, gender = $3, address = $4, phone = $5, dob = $6, email = $7,consti_id = $8 WHERE v_id = $9",[name,age,gender,address,phone,dob,email,consti_id,id]
     )
     res.json("Voter name updated")
 })
@@ -106,7 +119,7 @@ app.delete("/voter/:id",async(req,res)=>
     }
 })
 
-//add data to electtion_officer
+//add data to election_officer
 app.post('/officer',async (req,res)=>
 {
     try {
@@ -133,6 +146,7 @@ app.get("/officer",async (req,res)=>
         console.log(error.message)
     }
 })
+//add candidate
 
 app.listen(5000,()=>
 {
