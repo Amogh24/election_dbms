@@ -148,6 +148,45 @@ app.get("/officer",async (req,res)=>
 })
 //add candidate
 
+//select all voters from particular consti
+app.get("/voter/consti/:id",async(req,res)=>
+{
+    try {
+        const {id} = req.params
+        const cvoters = await pool.query(
+            "SELECT * FROM VOTER WHERE consti_id = $1",[id]
+        )
+        res.json(cvoters.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+//select all female voters from particular consti 
+app.get('/voter/fconsti/:id',async(req,res)=>
+{
+    try {
+        const {id} = req.params
+        const cvoters = await pool.query(
+            "SELECT * FROM VOTER WHERE consti_id = $1 AND gender ='Female'",[id]
+        )
+        res.json(cvoters.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+//select all young voters from particular consti
+app.get('/voter/yconsti/:id',async(req,res)=>
+{
+    try {
+        const {id} = req.params
+        const cvoters = await pool.query(
+            "SELECT * FROM VOTER WHERE consti_id = $1 and age<30",[id]
+        )
+        res.json(cvoters.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
 app.listen(5000,()=>
 {
     console.log("server has started on port 5000")
