@@ -28,7 +28,7 @@ const linkStyle={
           <Link style={linkStyle} to ='/officer'>
           <button className='B'><span>Election Officers</span></button>
           </Link>
-          
+           
       </ul>
       
       </div>

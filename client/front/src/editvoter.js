@@ -57,7 +57,9 @@ import React, { useState } from 'react';
            method:"PUT" ,
            headers:{"Content-Type": "application/json"},
            body : JSON.stringify(person)
+          
         });
+        window.alert(`Congratulations your details have been updated`)
     }
        }
        catch(error){
@@ -120,7 +122,7 @@ const handleConsti = (event) =>
         <div>
             <h1 className="heading">Edit Voter Details</h1>
         <form onSubmit={FetchVoter}>
-        <input type="number" placeholder="enter your voter id" value={id} onChange={handleID}></input>
+        <label>Voter ID:</label><input type="number" placeholder="enter your voter id" value={id} onChange={handleID}></input>
         <div>
             <button style={{backgroundColor:" rgb(62, 204, 62)",borderRadius:"5px",color:"white",height:"40px",width:"100px"}}>SUBMIT</button>
         </div>

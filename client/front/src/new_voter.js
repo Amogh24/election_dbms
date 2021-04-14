@@ -115,7 +115,7 @@ const Constilist = () =>
 {
     return(
         <div>
-        <h1 style={{color:"white"}}>List of Constituencies</h1>
+        <h1 style={{color:"white",fontFamily:"Arial",marginTop:"20px"}}>List of Constituencies</h1>
          <table className="t">
     <thead>
       <tr className="tr"> 
@@ -146,7 +146,7 @@ const Constilist = () =>
 const HandleClick = ()=>
 {
     console.log(constis)
-    setShow(true)
+    setShow(!show)
    
 }
 
@@ -178,10 +178,10 @@ const HandleClick = ()=>
              </div>
              
              <div>
-                 <button className="sub">ADD</button>
+                 <button className="sub" >ADD</button>
              </div>
              </form>
-             <button onClick={HandleClick}>List of constituencies</button>
+             <button style={{backgroundColor:"rgb(204,0,0)",color:"white",marginTop:"20px",fontSize: "larger",height:"50px",borderRadius:"4px",marginBottom:"10px"}}onClick={HandleClick}>List of constituencies</button>
              {
                  show?<Constilist/>:null
              }
