@@ -10,18 +10,31 @@ function Voter()
 {
     
     return(
-        <Router>
+     
         <div className="voter">
-         
-            <Link style={linkStyle} to ='/newvoter'>
-            <h2>New voter registration</h2>
+         <p style={{color:"white",textAlign:"center",fontSize:"20px",marginLeft:"auto",marginRight:"auto"}}>Voting is a right that everyone should exercise For new voter registration click on the button below</p>
+        
+            <br/>
+             <Link to = "/newvoter">
+                <div style={{alignItems:"center"}}>
+                <button style={{backgroundColor:" rgb(10,50,239)",color:"white",marginTop:"0px",fontSize: "larger",height:"50px",borderColor:"black",borderRadius:"4px",marginLeft:"auto",marginRight:"auto"}}>
+                    New Voter Registration
+                </button>
+                </div>
+            </Link> 
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <p style={{color:"white",textAlign:"center",fontSize:"20px",marginLeft:"auto",marginRight:"auto"}}>We all make mistakes For editing your voter registration click on the button below</p>  
+            <Link to = "/editvoter">
+                <div style={{alignItems:"center"}}>
+                <button style={{backgroundColor:" rgb(10,50,239)",color:"white",marginTop:"0px",fontSize: "larger",height:"50px",borderColor:"black",borderRadius:"4px",marginLeft:"auto",marginRight:"auto"}}>
+                    Edit Voter Registration
+                </button>
+                </div>
             </Link>
-            
-            <h2>Edit existing voter details</h2>
-            <h2>Delete voter registration</h2>
+      
             
         </div>
-        </Router>
+        
     );
 }
     

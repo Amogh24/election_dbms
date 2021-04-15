@@ -120,7 +120,7 @@ const handleConsti = (event) =>
 
     return(
         <div>
-            <h1 className="heading">Edit Voter Details</h1>
+            <h1 className="h">Edit Voter Details</h1>
         <form onSubmit={FetchVoter}>
         <label>Voter ID:</label><input type="number" placeholder="enter your voter id" value={id} onChange={handleID}></input>
         <div>

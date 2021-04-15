@@ -67,7 +67,7 @@ console.log(officers)
 return(
     
     <div>
-        <h1 className="heading">List of Election Officers</h1>
+        <h1 className="h">List of Election Officers</h1>
          <table className="t">
     <thead>
       <tr className="tr"> 

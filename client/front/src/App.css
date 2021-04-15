@@ -3,18 +3,18 @@
   
 }
 .voter{
-  display:flex;
+ 
   justify-content: space-around;
   
   color:black; 
 }
-.nav{
+/* .nav{
   display:flex;
   justify-content: space-around;
   border-radius: 5%;
   text-align: center;
   color: white;
-}
+} */
 .list{
   list-style: none;
   text-align: center;
@@ -148,7 +148,11 @@ input{
   margin: 8px 10px;
   border-radius: 5px;
 }
+nav{
+  background-color: rgb(189, 197, 197);
+  border-radius: 4px;
 
+}
 
 
 body {background-color:rgb(51, 51, 51);}
