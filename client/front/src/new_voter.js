@@ -1,5 +1,5 @@
 import React,{useState,useEffect,Fragment} from 'react'
-import List from './modal'
+
 
 
 const Inputvoter = () =>
@@ -35,6 +35,11 @@ const addPerson = async (event) =>
  {
     window.alert("Age must be greater than 18")
  }
+  else if(phone.toString().length!=10)
+ {
+     window.alert("Please enter 10-digit phone number")
+ }
+ else{
  console.log(person)
  const response = await fetch("http://localhost:5000/voter/new",{
     method:"POST" ,
@@ -46,7 +51,7 @@ const addPerson = async (event) =>
  const voter_id = await res.json()
  console.log(voter_id.max)
  window.alert(`Congratulations you have been registered as a voter. Your voter ID is ${voter_id.max}`)
-}
+}}
 }
 
 //name
@@ -158,21 +163,21 @@ const HandleClick = ()=>
          <div class="container">
          <form onSubmit ={addPerson}>
              <div>
-                 <label>NAME: </label><input placeholder="Name"type="text" value = {name}
+                 <label>NAME: </label><input placeholder="Name"type="text" required value = {name}
                  onChange = {handleName}/><br />
-                <label>AGE:</label> <input placeholder="18" type="number" value = {age}
+                <label>AGE:</label> <input placeholder="18" type="number" required value = {age}
                  onChange = {handleAge}/> <br />
-                <label>GENDER: </label><input type="text" placeholder="enter Male or Female or other"value = {gender}
+                <label>GENDER: </label><input type="text" placeholder="enter Male or Female or other" required value = {gender}
                  onChange = {handleGender}/> <br />
-                 <label>EMAIL: </label><input value = {mail}
+                 <label>EMAIL: </label><input required value = {mail}
                  onChange = {handleMail}/> <br />
-                 <label>ADDRESS: </label><input value = {address}
+                 <label>ADDRESS: </label><input required value = {address}
                  onChange = {handleAddress}/><br />
-                 <label>PHONE: </label><input type="number"value = {phone}
+                 <label>PHONE: </label><input type="number"  pattern="\d{3}[\-]\d{3}[\-]\d{4}" required value = {phone}
                  onChange = {handlePhone}/><br />
-                 <label>DATE: </label><input placeholder="MM-DD-YYYY"value = {date}
+                 <label>DATE: </label><input required  placeholder="MM-DD-YYYY"value = {date}
                  onChange = {handleDate}/> <br />
-                <label>CONSTITUENCY ID:</label> <input placeholder="check the list below to see your constituency ID"value = {consti}
+                <label>CONSTITUENCY ID:</label> <input required placeholder="check the list below to see your constituency ID"value = {consti}
                  onChange = {handleConsti}/> <br />
 
              </div>
