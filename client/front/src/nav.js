@@ -11,7 +11,8 @@ const linkStyle={
 {
     return(
         
-        <div><h1 className="heading">Electoral Database</h1>
+        <div><h1 className="heading"><u>Electoral Database</u></h1>
+        <br/>
       <div className="nav">
         
       {/* <ul className="list">
@@ -31,13 +32,18 @@ const linkStyle={
            
       </ul>
        */}
-        <p style={{color:"white",fontSize:"20px"}}><i>"The ignorance of one voter in a democracy impairs the security of all"</i> - John F. Kennedy</p>
-     <br/><br/><br/>
+        <ol>
+        <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "voter" for new voter registration or editing existent voter registration</p></li>
+  
+     <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "candidates" for viewing list of candidates, or registering yourself as a candidate</p></li>
+     
+     <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "election officers" to see list of election officers</p></li>
+     
+     <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "demographic study" to gain some insight regarding each constituency</p></li>
+     <br/>
+     </ol>
+     <br/><br/><br/><br/>
      <p style={{color:"white",fontSize:"20px"}}><i>"The ballot is stronger than the bullet"</i> - Abraham Lincoln</p>
-     <br/><br/><br/>
-     <p style={{color:"white",fontSize:"20px"}}><i>"Voting is not only our right,it is our power"</i> - Loung Ung</p>
-     <br/><br/><br/>
-     <p style={{color:"white",fontSize:"20px"}}><i>"The vote is the most important non-violent tool we have"</i> - John Lewis</p>
       </div>
       </div>
     );
