@@ -4,6 +4,7 @@ const { response } = require('express');
 const pool = require("./db");
 
 
+
 const app = express();
 app.use(cors())
 app.use(express.json())
@@ -187,6 +188,50 @@ app.get('/voter/yconsti/:id',async(req,res)=>
         console.error(error.message)
     }
 })
+
+//add data to candidates
+app.post('/candidate',async (req,res)=>
+{
+    try {
+        console.log(req.body)
+        const {name,age,gender,constituency,political_party,consti_id} = req.body
+        const new_candidate = await pool.query(
+            "INSERT INTO candidates (name,age,gender,constituency,political_party,consti_id)VALUES($1,$2,$3,$4,$5,$6) RETURNING *",[name,age,gender,constituency,political_party,consti_id]
+            )
+            res.json(new_candidate)
+
+    } catch (error) { 
+        console.error(error.message)
+    }
+})
+
+//get all candidates
+app.get('/candidate', async(req,res)=>
+{
+    try {
+        const allc = await pool.query(
+            "select * from candidates"
+        )
+        res.json(allc.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
+//get all candidates from consti
+app.get('/candidate/:id', async(req,res)=>
+{
+    try {
+        const {id} = req.params
+        const c = await pool.query(
+            "select * from candidates where consti_id = $1",[id]
+        )
+        res.json(c.rows)
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
 app.listen(5000,()=>
 {
     console.log("server has started on port 5000")

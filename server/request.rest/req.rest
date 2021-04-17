@@ -1,8 +1,12 @@
-POST http://localhost:5000/officer
+POST  http://localhost:5000/candidate
 Content-Type: application/json
 
 {
-    "officer_id":1,
+    
     "name":"Rakesh",
-    "consti_id":1
+    "age":"40",
+    "gender":"Male",
+    "constituency":"New Delhi",
+    "political_party":"B.J.P",
+    "consti_id":"1"
 }

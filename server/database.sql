@@ -1,5 +1,6 @@
 //Start your postgres service: sudo service postgresql start
 //Connect to the postgres service and open the psql shell: sudo -u postgres psql
+//id,name,age,gender,CONSTITUENCY,polirical party
 
 \c db1;
 CREATE TABLE VOTER
@@ -35,11 +36,11 @@ CREATE TABLE ELECTION_OFFICER
 CREATE TABLE CANDIDATES
 (
     candidate_id SERIAL PRIMARY KEY,
-    v_id int NOT NULL,
+    name varchar(255),
+    age int,
+    gender varchar(255),
+    constituency varchar(255),
+    political_party varchar(255),
     consti_id int NOT NULL,
-    assets int,
-    education varchar(255),
-    FOREIGN KEY(consti_id) REFERENCES CONSTITUENCY(consti_id),
-    FOREIGN KEY(v_id) REFERENCES VOTER(v_id),
-    CHECK (age>=25)
+    FOREIGN KEY(consti_id) REFERENCES CONSTITUENCY(consti_id) 
 );
