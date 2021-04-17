@@ -12,7 +12,7 @@ function Voter()
     return(
      
         <div className="voter">
-         <p style={{color:"white",textAlign:"center",fontSize:"20px",marginLeft:"auto",marginRight:"auto"}}>Voting is a right that everyone should exercise.cd  For new voter registration click on the button below</p>
+         <p style={{color:"white",textAlign:"center",fontSize:"20px",marginLeft:"auto",marginRight:"auto"}}>Voting is a right that everyone should exercise. For new voter registration click on the button below</p>
         
             <br/>
              <Link to = "/newvoter">

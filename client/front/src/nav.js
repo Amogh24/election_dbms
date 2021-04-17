@@ -35,7 +35,7 @@ const linkStyle={
         <ol>
         <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "voter" for new voter registration or editing existent voter registration</p></li>
   
-     <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "candidates" for viewing list of candidates, or registering yourself as a candidate</p></li>
+     <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "candidates" for viewing list of candidates</p></li>
      
      <li style={{textAlign:"left",color:"white"}}><p style={{color:"white",fontSize:"20px"}}> Click on "election officers" to see list of election officers</p></li>
      

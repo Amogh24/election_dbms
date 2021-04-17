@@ -7,7 +7,7 @@ import Edit from './editvoter.js'
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Study from './demostudy'
 import Navbar from './navbar'
-
+import Candidate from './candidates'
 
 function App() {
   // const home = require('./home.html')
@@ -25,6 +25,7 @@ function App() {
       <Route path = '/officer' component={Officer}/>
       <Route path = '/editvoter' component={Edit}/>
       <Route path = '/study' component={Study}/>
+      <Route path = '/candidate' component = {Candidate}/>
       </Switch>
       <br/><br/><br/>
     
